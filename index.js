@@ -7,7 +7,7 @@ const { token } = require('./private/config.json')
 
 client.on('ready', async () => {
 
-    console.log(`${client.user.username} Is Online`);
+    console.log("\x1b[36m%s\x1b[0m", `${client.user.username} Is Online`);
     client.user.setActivity('Prefix: !!')
     client.user.setStatus('idle')
 
