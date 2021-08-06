@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client()
 
 const ip = require('myip');
+const { exec } = require("child_process")
 
 const { token } = require('./private/config.json')
 
@@ -25,6 +26,16 @@ client.on('message', async (msg) => {
         setTimeout(function() {
             client.user.setStatus('idle')
         }, 5000)
+    }
+
+    if(msg.content === '!!launchts') {
+
+        if(!msg.author.id === '310263028203651073' || !msg.author.id === '398684408057430016') {
+            msg.channel.send('You Do Not Have Permission To Use This Command');
+        }
+
+    exec('"./ts3server.exe - Shortcut.lnk"').unref()
+    msg.channel.send('Teamspeak Server Now Online')
     }
 
 })
